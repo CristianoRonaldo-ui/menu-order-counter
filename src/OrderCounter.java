@@ -22,4 +22,19 @@ public class OrderCounter {
             System.out.println(dish + ": " + orders.get(dish));
         }
     }
+
+    public String findBestSeller() {
+        String bestDish = null;
+        int bestCount = 0;
+
+        for (String dish : orders.keySet()) {
+            int count = orders.get(dish);
+            if (count > bestCount) {
+                bestCount = count;
+                bestDish = dish;
+            }
+        }
+
+        return bestDish;
+    }
 }
