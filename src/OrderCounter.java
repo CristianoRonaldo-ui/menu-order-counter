@@ -1,10 +1,10 @@
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class OrderCounter {
-    private HashMap<String, Integer> orders;
+    private LinkedHashMap<String, Integer> orders;
 
     public OrderCounter() {
-        orders = new HashMap<>();
+        orders = new LinkedHashMap<>();
     }
 
     public void addOrder(String dish) {
@@ -14,5 +14,12 @@ public class OrderCounter {
 
     public int getCount(String dish) {
         return orders.getOrDefault(dish, 0);
+    }
+
+    public void printReport() {
+        System.out.println("=== Order Report ===");
+        for (String dish : orders.keySet()) {
+            System.out.println(dish + ": " + orders.get(dish));
+        }
     }
 }
