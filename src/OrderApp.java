@@ -13,5 +13,6 @@ public class OrderApp {
         System.out.println("Banh Mi: " + counter.getCount("Banh Mi"));
         System.out.println("Spring Rolls: " + counter.getCount("Spring Rolls"));
         counter.printReport();
+        System.out.println("Best seller: " + counter.findBestSeller());
     }
 }
